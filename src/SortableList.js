@@ -15,7 +15,7 @@ uniqueRowKey.id = 0
 
 export default class SortableList extends Component {
   static propTypes = {
-    data: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+    data: PropTypes.oneOfType([PropTypes.instanceOf(Array), PropTypes.instanceOf(Object)]).isRequired,
     order: PropTypes.arrayOf(PropTypes.any),
     style: ViewPropTypes.style,
     contentContainerStyle: ViewPropTypes.style,
@@ -32,7 +32,7 @@ export default class SortableList extends Component {
     manuallyActivateRows: PropTypes.bool,
     keyboardShouldPersistTaps: PropTypes.oneOf(['never', 'always', 'handled']),
     scrollEventThrottle: PropTypes.number,
-    decelerationRate: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+    decelerationRate: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     pagingEnabled: PropTypes.bool,
     nestedScrollEnabled: PropTypes.bool,
     disableIntervalMomentum: PropTypes.bool,
